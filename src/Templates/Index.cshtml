@@ -1,6 +1,3 @@
-@page
-@model RazorSSG.Templates.Index
-
 @{
     Layout = null;
 }
@@ -13,7 +10,11 @@
 </head>
 <body>
     <div>
-          
+        <ul>
+        @foreach (var item in Model.Items) {
+            <li>@item</li>
+        }
+        </ul>      
     </div>
 </body>
 </html>
