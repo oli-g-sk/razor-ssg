@@ -10,9 +10,8 @@ public class TemplateProcessor
     private readonly RazorLightEngine engine;
     private readonly string outputRoot;
 
-    public TemplateProcessor()
+    public TemplateProcessor(string appRoot)
     {
-        var appRoot = AppContext.BaseDirectory;
         var templateRoot = Path.Combine(appRoot, TemplateRoot);
         
         engine = new RazorLightEngineBuilder()
