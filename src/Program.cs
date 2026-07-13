@@ -28,7 +28,7 @@ var engine = new RazorLightEngineBuilder()
     .Build();
 
 var html = await engine.CompileRenderAsync(
-    "index.cshtml",
+    "Index.cshtml",
     model);
 
 await File.WriteAllTextAsync(
