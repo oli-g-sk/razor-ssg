@@ -19,4 +19,11 @@
       </Resource>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Data\items.json" />
+      <Content Include="Data\items.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
