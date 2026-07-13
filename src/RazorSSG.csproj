@@ -14,15 +14,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="wwwroot\style.css" />
-      <Resource Include="wwwroot\style.css">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Resource>
-    </ItemGroup>
-
-    <ItemGroup>
       <Content Include="Data\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
       <Content Include="Templates\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+      <Content Include="wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     </ItemGroup>
 
 </Project>
