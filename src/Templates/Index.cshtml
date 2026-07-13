@@ -13,7 +13,7 @@
 <body>
     <div>
         <ul>
-        @foreach (var item in Model.Items) {
+        @foreach (var item in Model.Items ?? []) {
             <li>@item</li>
         }
         </ul>      
