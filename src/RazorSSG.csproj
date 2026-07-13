@@ -8,4 +8,8 @@
         <BaseOutputPath>../build/</BaseOutputPath>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="RazorLight" />
+    </ItemGroup>
+
 </Project>

@@ -3,6 +3,6 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     </PropertyGroup>
     <ItemGroup>
-        
+        <PackageVersion Include="RazorLight" Version="2.3.1" />
     </ItemGroup>
 </Project>
