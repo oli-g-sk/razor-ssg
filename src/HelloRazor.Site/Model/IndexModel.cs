@@ -1,4 +1,4 @@
-using RazorSSG.Core;
+using HelloRazor.Core;
 
 namespace RazorSSG.Site.Model;
 

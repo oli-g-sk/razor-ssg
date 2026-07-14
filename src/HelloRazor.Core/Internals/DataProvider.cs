@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace RazorSSG.Core.Internals;
+namespace HelloRazor.Core.Internals;
 
 internal class DataProvider(string appRoot)
 {

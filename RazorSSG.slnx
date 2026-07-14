@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="src/RazorSSG.Core/RazorSSG.Core.csproj" />
-  <Project Path="src/RazorSSG.Site/RazorSSG.Site.csproj" />
-</Solution>

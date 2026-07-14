@@ -1,4 +1,4 @@
-namespace RazorSSG.Core;
+namespace HelloRazor.Core;
 
 /// <summary>
 /// A simple class representing a page with
