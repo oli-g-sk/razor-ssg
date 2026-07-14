@@ -1,9 +1,9 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace RazorSSG.Core.Services;
+namespace RazorSSG.Core.Internals;
 
-public class DataProvider(string appRoot)
+internal class DataProvider(string appRoot)
 {
     private const string DataFolderName = "Data";
 

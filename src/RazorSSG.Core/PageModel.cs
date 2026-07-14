@@ -1,4 +1,4 @@
-namespace RazorSSG.Core.Model;
+namespace RazorSSG.Core;
 
 /// <summary>
 /// A simple class representing a page with
