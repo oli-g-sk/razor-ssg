@@ -1,8 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using RazorSSG.Model;
 
-namespace RazorSSG.Services;
+namespace RazorSSG.Core.Services;
 
 public class DataProvider(string appRoot)
 {

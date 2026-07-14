@@ -1,7 +1,8 @@
 using System.Data;
-using PageModel = RazorSSG.Model.PageModel;
+using RazorSSG.Core.Model;
+using PageModel = RazorSSG.Core.Model.PageModel;
 
-namespace RazorSSG.Services;
+namespace RazorSSG.Core.Services;
 
 public class SiteBuilder
 {

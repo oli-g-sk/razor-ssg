@@ -1,7 +1,7 @@
 using RazorLight;
-using RazorSSG.Model;
+using RazorSSG.Core.Model;
 
-namespace RazorSSG.Services;
+namespace RazorSSG.Core.Services;
 
 public class TemplateProcessor
 {
