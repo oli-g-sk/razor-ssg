@@ -1,6 +1,6 @@
 using RazorSSG.Core.Model;
 
-namespace RazorSSG.Model;
+namespace RazorSSG.Site.Model;
 
 public class IndexModel() : PageModel("My Awesome Page!")
 {

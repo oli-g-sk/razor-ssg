@@ -1,7 +1,6 @@
-﻿using RazorSSG;
-using RazorSSG.Core.Model;
+﻿using RazorSSG.Core.Model;
 using RazorSSG.Core.Services;
-using RazorSSG.Model;
+using RazorSSG.Site.Model;
 
 // TODO keep upper and lower case in mind
 
