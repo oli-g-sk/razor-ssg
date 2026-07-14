@@ -1,7 +1,7 @@
 using System.Data;
-using HelloRazor.Core.Internals;
+using Okisioli.HelloRazor.Core.Internals;
 
-namespace HelloRazor.Core;
+namespace Okisioli.HelloRazor.Core;
 
 public class SiteBuilder
 {

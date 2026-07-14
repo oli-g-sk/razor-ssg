@@ -1,4 +1,4 @@
-namespace HelloRazor.Core.Internals;
+namespace Okisioli.HelloRazor.Core.Internals;
 
 public record PageInfo(string TemplateName, string? DataFile);
 

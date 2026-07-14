@@ -2,7 +2,6 @@
   <PropertyGroup>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RazorSSG.Site</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HelloRazor.Core\HelloRazor.Core.csproj" />
+    <ProjectReference Include="..\Okisioli.HelloRazor.Core\Okisioli.HelloRazor.Core.csproj" />
   </ItemGroup>
 </Project>

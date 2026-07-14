@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace HelloRazor.Core.Internals;
+namespace Okisioli.HelloRazor.Core.Internals;
 
 internal class DataProvider(string appRoot)
 {

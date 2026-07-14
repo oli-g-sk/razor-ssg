@@ -1,6 +1,6 @@
-﻿using HelloRazor.Core;
-using HelloRazor.Core.Internals;
-using RazorSSG.Site.Model;
+﻿using Okisioli.HelloRazor.Core;
+using Okisioli.HelloRazor.Core.Internals;
+using Okisioli.HelloRazor.Site.Model;
 
 // TODO keep upper and lower case in mind
 
