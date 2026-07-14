@@ -5,18 +5,17 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <BaseOutputPath>../build/</BaseOutputPath>
         <PreserveCompilationContext>true</PreserveCompilationContext>
     </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="RazorLight" />
-    </ItemGroup>
 
     <ItemGroup>
       <Content Include="Data\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
       <Content Include="Templates\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
       <Content Include="wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RazorSSG.Core\RazorSSG.Core.csproj" />
     </ItemGroup>
 
 </Project>

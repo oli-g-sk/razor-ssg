@@ -1,6 +1,7 @@
 using RazorLight;
+using RazorSSG.Core.Model;
 
-namespace RazorSSG.Services;
+namespace RazorSSG.Core.Services;
 
 public class TemplateProcessor
 {
@@ -23,11 +24,11 @@ public class TemplateProcessor
         Directory.CreateDirectory(outputRoot);
     }
     
-    public async Task Process(string templateName, dynamic model)
+    public async Task Process<T>(string templateName, T? model)
     {
-        var html = await engine.CompileRenderAsync(
-            $"{templateName}.cshtml",
-            model);
+        var html = model == null
+            ? await engine.CompileRenderAsync($"{templateName}.cshtml", new PageModel(templateName))
+            : await engine.CompileRenderAsync($"{templateName}.cshtml", model);
 
         await File.WriteAllTextAsync(
             Path.Combine(outputRoot, $"{templateName.ToLower()}.html"),
