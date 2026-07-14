@@ -1,5 +1,12 @@
 <Project>
   <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Okisioli</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <ArtifactsPath>$(MSBuildThisFileDirectory)build</ArtifactsPath>
   </PropertyGroup>
 </Project>
