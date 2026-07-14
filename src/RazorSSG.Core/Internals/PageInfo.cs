@@ -1,4 +1,4 @@
-namespace RazorSSG.Core.Model;
+namespace RazorSSG.Core.Internals;
 
 public record PageInfo(string TemplateName, string? DataFile);
 

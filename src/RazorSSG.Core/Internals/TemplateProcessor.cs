@@ -1,10 +1,10 @@
 using RazorLight;
-using RazorSSG.Core.Model;
 
-namespace RazorSSG.Core.Services;
+namespace RazorSSG.Core.Internals;
 
-public class TemplateProcessor
+internal class TemplateProcessor
 {
+    // TODO make configurable?
     private const string TemplateRoot = "Templates";
     private const string OutputRoot = "wwwroot";
     
