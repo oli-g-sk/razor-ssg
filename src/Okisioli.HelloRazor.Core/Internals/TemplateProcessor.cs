@@ -4,7 +4,7 @@ namespace Okisioli.HelloRazor.Core.Internals;
 
 internal class TemplateProcessor
 {
-    // TODO make configurable?
+    // TODO inject or make configurable?
     private const string TemplateRoot = "Templates";
     private const string OutputRoot = "wwwroot";
     

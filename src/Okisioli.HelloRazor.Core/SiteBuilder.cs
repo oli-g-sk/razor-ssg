@@ -11,6 +11,17 @@ public class SiteBuilder
     
     private readonly List<PageInfo> pages = new();
 
+    /// <summary>
+    /// Registers a page to be generated as part of the static site.
+    /// </summary>
+    /// <param name="pageInfo">
+    /// Metadata about the page to be generated.
+    /// </param>
+    /// <typeparam name="T">
+    /// A custom type inheriting from <see cref="PageModel"/> if the given page requires one.
+    /// Use <see cref="PageModel"/> itself if no custom type is needed.
+    /// </typeparam>
+    /// <returns></returns>
     public SiteBuilder WithPage<T>(PageInfo<T> pageInfo) where T : PageModel
     {
         Validate(pageInfo);

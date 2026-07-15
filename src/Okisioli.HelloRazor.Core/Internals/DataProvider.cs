@@ -5,6 +5,7 @@ namespace Okisioli.HelloRazor.Core.Internals;
 
 internal class DataProvider(string appRoot)
 {
+    // TODO inject or make configurable?
     private const string DataFolderName = "Data";
 
     public async Task<T?> LoadData<T>(string dataFileName)
