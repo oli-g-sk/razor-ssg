@@ -4,6 +4,7 @@ using Okisioli.HelloRazor.Site.Model;
 
 // TODO keep upper and lower case in mind
 
-var sb = new SiteBuilder();
-sb.AddPage(new PageInfo<IndexModel>("Index"));
+var sb = new SiteBuilder()
+    .WithPage(new PageInfo<IndexModel>("Index"));
+    
 await sb.Generate();

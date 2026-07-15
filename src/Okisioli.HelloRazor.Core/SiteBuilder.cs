@@ -5,15 +5,17 @@ namespace Okisioli.HelloRazor.Core;
 
 public class SiteBuilder
 {
+    // TODO make path configurable?
     private readonly DataProvider dataProvider = new(AppContext.BaseDirectory);
     private readonly TemplateProcessor processor = new(AppContext.BaseDirectory);
     
-    private List<PageInfo> pages = new();
+    private readonly List<PageInfo> pages = new();
 
-    public void AddPage<T>(PageInfo<T> pageInfo) where T : PageModel
+    public SiteBuilder WithPage<T>(PageInfo<T> pageInfo) where T : PageModel
     {
         Validate(pageInfo);
         pages.Add(pageInfo);
+        return this;
     }
     
     public async Task Generate()
