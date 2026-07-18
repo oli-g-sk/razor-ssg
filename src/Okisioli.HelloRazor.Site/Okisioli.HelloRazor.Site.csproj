@@ -2,6 +2,7 @@
   <PropertyGroup>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <OutputType>Exe</OutputType>
+    <Description>Simple Razor-powered static site supporting optional JSON or text data sources, and also containing a GitHub workflow to make it a one-click deploy to GitHub pages.</Description>
   </PropertyGroup>
 
   <ItemGroup>

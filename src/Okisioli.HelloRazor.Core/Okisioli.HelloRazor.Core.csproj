@@ -1,4 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <Description>Allows generating simple, text or JSON file powered static websites using Razor. This package is a base for Okisioli.HelloRazor.Site, which should be used as a template and instantiated via 'dotnet new'.</Description>
+    </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="RazorLight" />
     </ItemGroup>
