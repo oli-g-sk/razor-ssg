@@ -10,9 +10,11 @@
     <VersionPrefix>0.1.0</VersionPrefix>
   </PropertyGroup>
 
-  <PropertyGroup
+  <PropertyGroup>
     <RepositoryType>git</RepositoryType> 
     <RepositoryUrl>https://github.com/oli-g-sk/hello-razor.git</RepositoryUrl> 
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <PropertyGroup>
