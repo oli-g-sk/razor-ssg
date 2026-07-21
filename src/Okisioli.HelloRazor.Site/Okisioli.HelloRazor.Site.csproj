@@ -5,6 +5,16 @@
     <Description>Simple Razor-powered static site supporting optional JSON or text data sources, and also containing a GitHub workflow to make it a one-click deploy to GitHub pages.</Description>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Include="Data\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="Templates\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
