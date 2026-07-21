@@ -1,0 +1,16 @@
+# Build output
+bin/
+obj/
+artifacts/
+publish/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+
+# Local project files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
