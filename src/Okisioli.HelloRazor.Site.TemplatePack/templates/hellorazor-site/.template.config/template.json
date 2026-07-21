@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Okisioli",
+  "classifications": [ "Common", "Library" ],
+  "name": "HelloRazor Site",
+  "identity": "Okisioli.HelloRazor.Site",
+  "shortName": "hellorazor-site",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "Okisioli.HelloRazor.Site",
+  "preferNameDirectory": true
+}

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>Okisioli.HelloRazor.Site</PackageId>
+    <PackageType>Template</PackageType>
+    <Title>HelloRazor Site Template</Title>
+    <Description>Simple Razor-powered static site supporting optional JSON or text data sources, and also containing a GitHub workflow to make it a one-click deploy to GitHub pages.</Description>
+    <PackageTags>dotnet-new;templates;razor;static-site</PackageTags>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="templates\**\*" />
+  </ItemGroup>
+</Project>
