@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/template",
   "author": "Okisioli",
-  "classifications": [ "Common", "Library" ],
+  "classifications": [ "StaticSite", "SSG", "Tool" ],
   "name": "HelloRazor Site",
   "identity": "Okisioli.HelloRazor.Site",
   "shortName": "hellorazor-site",
