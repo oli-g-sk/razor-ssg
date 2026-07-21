@@ -14,6 +14,7 @@
     <TemplatePayloadRoot>$(MSBuildProjectDirectory)\obj\generated-template\hellorazor-site\</TemplatePayloadRoot>
     <TemplateConfigDirectory>$(TemplatePayloadRoot).template.config\</TemplateConfigDirectory>
     <TemplateProjectFile>$(TemplatePayloadRoot)Okisioli.HelloRazor.Site.csproj</TemplateProjectFile>
+    <TemplateGitIgnoreFile>$(TemplatePayloadRoot)gitignore</TemplateGitIgnoreFile>
     <CorePackageId>Okisioli.HelloRazor.Core</CorePackageId>
     <CorePackageVersion>$(VersionPrefix)</CorePackageVersion>
   </PropertyGroup>
@@ -29,21 +30,33 @@
     AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
       <ProjectFile ParameterType="System.String" Required="true" />
-      <ProjectReferenceInclude ParameterType="System.String" Required="true" />
+      <ProjectReferenceFileName ParameterType="System.String" Required="true" />
       <PackageId ParameterType="System.String" Required="true" />
       <PackageVersion ParameterType="System.String" Required="true" />
     </ParameterGroup>
     <Task>
       <Using Namespace="System.Linq" />
       <Using Namespace="System.Xml.Linq" />
+      <Using Namespace="System.IO" />
       <Code Type="Fragment" Language="cs"><![CDATA[
+        #nullable disable
         var document = XDocument.Load(ProjectFile);
         var projectReferences = document
             .Descendants("ProjectReference")
-            .Where(reference => string.Equals(
-                (string)reference.Attribute("Include"),
-                ProjectReferenceInclude,
-                System.StringComparison.OrdinalIgnoreCase))
+            .Where(reference =>
+            {
+                var include = reference.Attribute("Include")?.Value;
+                if (string.IsNullOrWhiteSpace(include))
+                {
+                    return false;
+                }
+
+                var normalizedInclude = include.Replace('\\', Path.DirectorySeparatorChar).Replace('/', Path.DirectorySeparatorChar);
+                return string.Equals(
+                    Path.GetFileName(normalizedInclude),
+                    ProjectReferenceFileName,
+                    StringComparison.OrdinalIgnoreCase);
+            })
             .ToList();
 
         foreach (var isPackable in document.Descendants("IsPackable").ToList())
@@ -53,7 +66,7 @@
 
         if (projectReferences.Count == 0)
         {
-            Log.LogError($"Could not find ProjectReference '{ProjectReferenceInclude}' in '{ProjectFile}'.");
+            Log.LogError($"Could not find a ProjectReference matching '{ProjectReferenceFileName}' in '{ProjectFile}'.");
         }
         else
         {
@@ -76,7 +89,7 @@
     <ItemGroup>
       <SiteTemplateSource
         Include="$(SiteProjectDirectory)**\*"
-        Exclude="$(SiteProjectDirectory)bin\**;$(SiteProjectDirectory)obj\**;$(SiteProjectDirectory).template.config\**" />
+        Exclude="$(SiteProjectDirectory)bin\**;$(SiteProjectDirectory)obj\**;$(SiteProjectDirectory).template.config\**;$(SiteProjectDirectory).gitignore" />
     </ItemGroup>
 
     <RemoveDir Directories="$(TemplatePayloadRoot)" />
@@ -87,13 +100,18 @@
       DestinationFiles="@(SiteTemplateSource->'$(TemplatePayloadRoot)%(RecursiveDir)%(Filename)%(Extension)')" />
 
     <WriteLinesToFile
+      File="$(TemplateGitIgnoreFile)"
+      Overwrite="true"
+      Lines="$([System.IO.File]::ReadAllText('$(SiteProjectDirectory)gitignore'))" />
+
+    <WriteLinesToFile
       File="$(TemplateConfigDirectory)template.json"
       Overwrite="true"
       Lines="$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)template.json'))" />
 
     <ReplaceProjectReferenceWithPackageReference
       ProjectFile="$(TemplateProjectFile)"
-      ProjectReferenceInclude="..\Okisioli.HelloRazor.Core\Okisioli.HelloRazor.Core.csproj"
+      ProjectReferenceFileName="Okisioli.HelloRazor.Core.csproj"
       PackageId="$(CorePackageId)"
       PackageVersion="$(CorePackageVersion)" />
 

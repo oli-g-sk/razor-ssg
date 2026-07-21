@@ -11,4 +11,16 @@
   },
   "sourceName": "Okisioli.HelloRazor.Site",
   "preferNameDirectory": true
+  ,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "rename": {
+            "gitignore": ".gitignore"
+          }
+        }
+      ]
+    }
+  ]
 }
