@@ -18,6 +18,11 @@
     <CorePackageVersion>$(VersionPrefix)</CorePackageVersion>
   </PropertyGroup>
 
+  <!--
+    Generate the template payload from the real Site project, then rewrite only the copied .csproj
+    so the instantiated project uses a PackageReference to Core instead of the local ProjectReference.
+    This keeps one authored Site project in the repo while still shipping a clean template payload.
+  -->
   <UsingTask
     TaskName="ReplaceProjectReferenceWithPackageReference"
     TaskFactory="RoslynCodeTaskFactory"
